@@ -39,7 +39,7 @@ else
 	 echo -e "\x1b[31m password is set easy123"
 	 chage -d 0 $username
 	 mkdir -p /home/$username/.ssh
-	 echo -e "\x1b[32;40m keys list \nAnalytics-BI.pem  AssignmentServerKey.pem \nbetaTestingInstanceKey.pem CredrDeveloperInstanceKey.pem  \ncredrimageprocesskey.pem credrjenkinskey.pem \nCredrMobileInstanceKey.pem credrnagioskey.pem \ncredrproddbinstancekey.pem credrStagingKey.pem  \ncredrTestke1y.pem DW.pem EverestKey.pem wordpressserverkey.pem \x1b[m"
+	 echo -e "\x1b[32;40m keys list \nAssignmentServerKey  AssignmentServerKey.pem \nbetaTestingInstanceKey.pem Developer.pem  \nimageprocesskey.pem jenkinskey.pem \nMobileInstanceKey.pem nagioskey.pem \nrproddbinstancekey.pem StagingKey.pem  \nTestke1y.pem DW.pem EverestKey.pem wordpresskey.pem \x1b[m"
 	 _copy
 fi
 else
