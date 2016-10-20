@@ -12,7 +12,7 @@ RETENTION=1
 SNAP_CREATION=/var/log/snapshot/snap_creation
 SNAP_DELETION=/var/log/snapshot/snap_deletion
 
-EMAIL_LIST=devops@credr.com
+EMAIL_LIST=youremailid@gmail.com
 
 echo "List of Snapshots Creation Status" > $SNAP_CREATION
 echo "List of Snapshots Deletion Status" > $SNAP_DELETION
@@ -68,4 +68,4 @@ done < $SNAPSHOT_INFO
 done
 echo >> $SNAP_DELETION
 cat $SNAP_CREATION $SNAP_DELETION > /var/log/snapshot/mail_report
-cat /var/log/snapshot/mail_report  | mail -aFrom:mohit.c@credr.com -s 'snapshot backup' $EMAIL_LIST
+cat /var/log/snapshot/mail_report  | mail -aFrom:devops@gmail.com -s 'snapshot backup' $EMAIL_LIST
