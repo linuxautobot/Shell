@@ -6,4 +6,7 @@
 
 3) Find duplicate and create hard link of it.
 
+4) mysql_service.sh, Start mysql service if stopped.
+
+
 
