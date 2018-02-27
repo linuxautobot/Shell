@@ -1,7 +1,8 @@
 #!/bin/bash
 err=0
-smallsample=$(expr `du -s  acces.log | awk  {'print $1'}`  / 2 )
-split -l $smallsample acces.log  uniquename
+read -p "enter the absoulet path of log file : " logFile
+smallsample=$(expr `du -s $logFile | awk  {'print $1'}`  / 2 )
+split -l $smallsample $logFile  uniquename
 
 ab=$(ls -rth | grep  uniquename)
 
