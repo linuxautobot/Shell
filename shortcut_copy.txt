@@ -2,3 +2,4 @@ On OS X:
 # ls file_* | xargs -J {} mv {} temp/
 On Linux:
 # ls file_* | xargs -i {} mv {} temp/
+sudo awk '{print $1}' /var/log/nginx/access.log | sort | uniq -c | sort -nr
