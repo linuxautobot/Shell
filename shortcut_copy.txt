@@ -2,4 +2,12 @@ On OS X:
 # ls file_* | xargs -J {} mv {} temp/
 On Linux:
 # ls file_* | xargs -i {} mv {} temp/
-sudo awk '{print $1}' /var/log/nginx/access.log | sort | uniq -c | sort -nr
+number of request from specific ip 
+# sudo awk '{print $1}' /var/log/nginx/access.log | sort | uniq -c | sort -nr  
+Sort access by Response Codes
+# awk '{print $9}' access.log | sort | uniq -c | sort -rn
+debug with links
+# awk '($9 ~ /404/)' access.log | awk '{print $7}' | sort | uniq -c | sort -rn
+# awk '($8 ~ /404/)' access.log | awk '{print $8}' | sort | uniq -c | sort -rn
+
+
