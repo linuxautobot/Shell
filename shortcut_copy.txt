@@ -9,5 +9,16 @@ Sort access by Response Codes
 debug with links
 # awk '($9 ~ /404/)' access.log | awk '{print $7}' | sort | uniq -c | sort -rn
 # awk '($8 ~ /404/)' access.log | awk '{print $8}' | sort | uniq -c | sort -rn
+##OoooYEaaa
+
+while true; do
+    read -p "is it Yes Or No" yn
+    case $yn in
+        [Yy]* ) echo "YES" && break;;
+        [Nn]* ) echo "NO" && break ;;
+        * ) echo "Please answer yes or no.";;
+    esac
+done
+
 
 
