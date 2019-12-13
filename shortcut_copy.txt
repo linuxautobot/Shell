@@ -9,6 +9,9 @@ Sort access by Response Codes
 debug with links
 # awk '($9 ~ /404/)' access.log | awk '{print $7}' | sort | uniq -c | sort -rn
 # awk '($8 ~ /404/)' access.log | awk '{print $8}' | sort | uniq -c | sort -rn
+most active IPs in a predefined time range:
+#cat /var/log/nginx/{filename}.log | awk '$4 >= "[13/Dec/2019:12:04:00" && $4 < "[13/Dec/2019:12:05:00"' | awk '{print $1}' | sort -n | uniq -c | sort -nr | head -20
+
 ##OoooYEaaa
 
 while true; do
