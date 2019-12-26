@@ -5,8 +5,6 @@ export NPMRC_AUTH_TOKEN_WEALTH=“8960c9c2-2ecb-4dff-a575-5651551c5606”
 export ARTIFACTORY_PASSWORD=Artifactory-Build-User
 export PATH=$PATH:/Users/a08447/homebrew/Cellar/apache-maven-3.6.1/bin
 export PATH=$PATH:/Users/a08447/Library/Python/2.7/bin/aws
-export alias k=/usr/local/bin/kubectl
-export alias free=/Users/a08447/Project/learn/Python/free
 export HISTFILESIZE=1000000
 export HISTSIZE=1000000
 export HISTFILESIZE=1000000
@@ -31,6 +29,8 @@ alias locationauto='networksetup -switchtolocation Automatic'
 alias locationmgpru='networksetup -switchtolocation MGPru'
 alias mgpru='locationmgpru && networksetup -setairportnetwork en0 MGPRU'
 alias krug='locationauto &&  networksetup -setairportnetwork en0 Krug'
+alias k=/usr/local/bin/kubectl
+alias free=/Users/a08447/Project/learn/Python/free
 
 
 
