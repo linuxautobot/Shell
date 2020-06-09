@@ -1,0 +1,6 @@
+nonEip=$(aws  ec2 describe-instances  --query "Reservations[*].Instances[*].NetworkInterfaces[*].Association[]" | jq '.[] | .[]  | select(.IpOwnerId=="amazon") | .PublicIp' )
+
+for a in $nonEip ;
+    do 
+     aws ec2 describe-instances --filter Name=ip-address,Values=$a --query 'Reservations[].Instances[].InstanceId'| jq .[] | xargs aws ec2 terminate-instances --instance-ids  ;
+done;
