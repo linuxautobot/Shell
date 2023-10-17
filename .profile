@@ -31,6 +31,12 @@ alias mgpru='locationmgpru && networksetup -setairportnetwork en0 MGPRU'
 alias krug='locationauto &&  networksetup -setairportnetwork en0 Krug'
 alias k=/usr/local/bin/kubectl
 alias free=/Users/a08447/Project/learn/Python/free
+alias documents='cd ~/Documents'
+alias fd='find ~/ -type f -iname'
+alias z='zip -r'
+alias uz='unzip'
+alias t='tar -zxvf'
+alias tz='tar -czvf'
 
 
 
@@ -46,18 +52,43 @@ wifioff && sleep 5 && wifion && locationmgpru && mgpru
 macnetstat (){
     netstat -Watnlv | grep LISTEN | awk '{"ps -o comm= -p " $9 | getline procname;colred="\033[01;31m";colclr="\033[0m"; print colred "proto: " colclr $1 colred " | addr.port: " colclr $4 colred " | pid: " colclr $9 colred " | name: " colclr procname;  }' | column -t -s "|"
 }
-myip(){
-if [ ${#@} -ne 0 ] && [ "$1" == "-h" ] || [ "$1" == "--help"  ]; then
-  echo "$(tput setaf 2) Usage: country country-iso city json  port/8080"
-  exit 0
-else
-  curl ifconfig.co/$1
-fi
+
+myip() {
+  if [ $# -ne 0 ] && ( [ "$1" = "-h" ] || [ "$1" = "--help" ] ); then
+    echo "$(tput setaf 2) Usage: myip country-iso city json port/8080"
+    exit 0
+  else
+    curl ifconfig.co/$1
+  fi
 }
+
 hist(){
  echo -e "$(tput setaf 3) $commonHist"
 }
 
+todolist() {
+  echo "[$(date +'%Y-%m-%d %H:%M:%S')]: $@" >> ~/todo.txt
+}
+
+weather() {
+  curl wttr.in
+}
+
+tracktime() {
+  echo "[$(date +'%Y-%m-%d %H:%M:%S')]: $@" >> ~/timetracking.txt
+}
+
+sysinfo() {
+  system_profiler SPSoftwareDataType
+}
+
+generate_password() {
+  openssl rand -base64 12
+}
+
+battery() {
+  pmset -g batt
+}
 
 
 if [[ -e ~/.ssh/known_hosts ]]; then
